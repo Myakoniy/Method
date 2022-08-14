@@ -11,18 +11,18 @@ public class Main {
         //Zadanie 2
         System.out.println("Zadanie 2");
 
-        int os = 1;
-        int age = 2012;
+        int os = 0;
+        int age = 2019;
 
         osCheck(os, age);
 
         //Zadanie 3
         System.out.println("Zadanie 3");
 
-        int clientDistance = 32;
 
-        cardDelivery(clientDistance);
 
+        int totalDay = cardDelivery();
+        System.out.println();
 
     }
 
@@ -37,10 +37,7 @@ public class Main {
         }
     }
 
-    public static void osCheck(int x, int y) {
-
-        int clientOSi = x;
-        int teleAge = y;
+    public static void osCheck(int clientOSi, int teleAge) {
 
         if (clientOSi == 0 && teleAge >= 2015) {
 
@@ -62,22 +59,26 @@ public class Main {
 
     }
 
-    public static void cardDelivery(int x) {
+    public static void cardDelivery () {
 
-        int deliveryDistance = x;
-
+        int deliveryDistance = 32;
+        int deliveryDay;
 
         if (deliveryDistance < 20) {
-            System.out.println("Ваша карта будет доставлена в течение суток");
+
+            deliveryDay = 1;
         }
 
         if (deliveryDistance >=20 &&  deliveryDistance <60) {
-            System.out.println("Ваша карта будет доставлена в течение двух суток");
+
+            deliveryDay = 2;
         }
 
         if (deliveryDistance >=60 &&  deliveryDistance <100) {
-            System.out.println("Ваша карта будет доставлена в течение трех суток");
+            deliveryDay = 3;
         }
+
+        return deliveryDay;
     }
 
 
