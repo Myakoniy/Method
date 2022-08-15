@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
 
 
@@ -5,8 +7,8 @@ public class Main {
        //Zadaine 1
         System.out.println("Zadanie 1");
 
-        int yea = 2016;
-        yearVis(yea);
+
+        yearVis();
 
         //Zadanie 2
         System.out.println("Zadanie 2");
@@ -19,18 +21,16 @@ public class Main {
         //Zadanie 3
         System.out.println("Zadanie 3");
 
-
-
-        int totalDay = cardDelivery();
-        System.out.println();
+        int totalDay = cardDelivery(25);
+        System.out.println(totalDay);
 
     }
 
-    public static void yearVis (int x) {
+    public static void yearVis () {
 
-        int year = x;
+        int currentYear = LocalDate.now().getYear();
 
-        if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0) {
+        if (currentYear % 4 != 0 || currentYear % 100 == 0 && currentYear % 400 != 0) {
             System.out.println("год не является високосным");
         } else {
             System.out.println("Год является вискокосным");
@@ -59,10 +59,10 @@ public class Main {
 
     }
 
-    public static void cardDelivery () {
+    public static int cardDelivery (int deliveryDistance) {
 
-        int deliveryDistance = 32;
-        int deliveryDay;
+        int deliveryDay = 0;
+
 
         if (deliveryDistance < 20) {
 
